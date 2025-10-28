@@ -278,3 +278,38 @@
   border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
 }
+
+/* Full Viewport Sections */
+.about-section,
+.projects-section,
+.blogs-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+  padding: 2rem 0;
+}
+
+.about-section {
+  background: var(--muted);
+}
+
+.projects-section {
+  background: var(--background);
+}
+
+.blogs-section {
+  background: var(--muted);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .about-section,
+  .projects-section,
+  .blogs-section {
+    padding: 1rem 0;
+    min-height: 100vh;
+  }
+}
