@@ -39,25 +39,25 @@ export default function Home() {
           </h1>
           <div className="mt-10 flex items-center justify-center gap-x-4 flex-wrap">
             <Button className="social-button" asChild>
-              <Link href="#github">
+              <Link href="https://github.com/SamienShaheed">
                 <Github className="mr-2 h-4 w-4" />
                 GitHub
               </Link>
             </Button>
             <Button className="social-button" asChild>
-              <Link href="#linkedin">
+              <Link href="https://linkedin.com/in/samienshaheed/">
                 <Linkedin className="mr-2 h-4 w-4" />
                 LinkedIn
               </Link>
             </Button>
             <Button className="social-button" asChild>
-              <Link href="#email">
+              <Link href="mailto:samienshaheed@gmail.com">
                 <Mail className="mr-2 h-4 w-4" />
                 Email
               </Link>
             </Button>
             <Button className="social-button" asChild>
-              <Link href="#huggingface">
+              <Link href="https://huggingface.co/SamienShaheed">
                 <Bot className="mr-2 h-4 w-4" />
                 Hugging Face
               </Link>
