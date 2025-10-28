@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import ScrollProgress from "@/components/scroll-progress";
+import { PageTransition } from "@/components/page-transition";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -64,8 +66,11 @@ export default function RootLayout({
           Skip to main content
         </a>
         <div className="relative flex min-h-screen flex-col">
+          <ScrollProgress />
           <SiteHeader />
-          <main id="main-content" className="flex-1">{children}</main>
+          <main id="main-content" className="flex-1">
+            <PageTransition>{children}</PageTransition>
+          </main>
           <SiteFooter />
         </div>
       </body>

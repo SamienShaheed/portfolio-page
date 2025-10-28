@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -10,8 +13,15 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const reduce = useReducedMotion();
+
   return (
-    <Card className="group hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
+    <motion.div
+      whileHover={reduce ? undefined : { y: -4, scale: 1.01 }}
+      whileTap={reduce ? undefined : { scale: 0.99 }}
+      transition={{ type: 'spring', stiffness: 260, damping: 22 }}
+    >
+      <Card className="group hover:shadow-lg transition-shadow duration-200">
       <CardHeader>
         <CardTitle className="group-hover:text-primary transition-colors">
           {project.url ? (
@@ -57,5 +67,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </CardContent>
     </Card>
+    </motion.div>
   );
 }
