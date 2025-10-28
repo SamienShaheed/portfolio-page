@@ -234,6 +234,24 @@
   animation-delay: -14s;
 }
 
+.blob:nth-child(4) {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, #f59e0b 0%, #f97316 50%, #ea580c 100%);
+  top: 20%;
+  right: 10%;
+  animation-delay: -3s;
+}
+
+.blob:nth-child(5) {
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, #10b981 0%, #059669 50%, #047857 100%);
+  bottom: 15%;
+  left: 15%;
+  animation-delay: -10s;
+}
+
 @keyframes blob-move {
   0%, 100% {
     transform: translate(0, 0) scale(1);
@@ -257,6 +275,8 @@
   align-items: center;
   justify-content: center;
   background: #0a0a0a;
+  margin-top: -4rem;
+  padding-top: 4rem;
 }
 
 .hero-content {
@@ -302,6 +322,35 @@
 
 .blogs-section {
   background: var(--muted);
+}
+
+/* Ripple overlay sits above blobs, below text */
+.hero-ripple-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: auto;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.hero-ripple {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%) scale(1);
+  border-radius: 9999px;
+  background: radial-gradient(closest-side, rgba(255,255,255,0.16), rgba(255,255,255,0.08) 45%, rgba(255,255,255,0) 65%);
+  filter: blur(8px);
+  animation: hero-ripple-expand 900ms ease-out forwards;
+}
+
+@keyframes hero-ripple-expand {
+  from { opacity: 0.9; transform: translate(-50%, -50%) scale(1); }
+  to { opacity: 0; transform: translate(-50%, -50%) scale(60); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-ripple { animation: none; opacity: 0; }
 }
 
 /* Responsive adjustments for mobile */

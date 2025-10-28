@@ -26,6 +26,8 @@ export default function Home() {
         <div className="blob"></div>
         <div className="blob"></div>
         <div className="blob"></div>
+        <div className="blob"></div>
+        <div className="blob"></div>
         
         <div className="hero-content">
           <div className="flex justify-center"> 
