@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -9,6 +10,44 @@ import { PageTransition } from "@/components/page-transition";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
+});
+
+// Nohemi font for hero section
+const nohemi = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Nohemi-Regular-BF6438cc579d934.woff",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Nohemi-Medium-BF6438cc57ddecd.woff",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Nohemi-SemiBold-BF6438cc57db2ff.woff",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Nohemi-Bold-BF6438cc577b524.woff",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Nohemi-ExtraBold-BF6438cc5761ae2.woff",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Nohemi-Black-BF6438cc565e67b.woff",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-hero",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -50,7 +89,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`dark ${inter.variable}`}>
+    <html lang="en" className={`dark ${inter.variable} ${nohemi.variable}`}>
       <head>
         <script
           defer

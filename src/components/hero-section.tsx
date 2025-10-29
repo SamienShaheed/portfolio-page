@@ -51,7 +51,7 @@ export function HeroSection() {
               <AvatarFallback>SS</AvatarFallback>
             </Avatar>
           </div>
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+          <h1 className="text-7xl font-medium tracking-tight text-white sm:text-7xl" style={{ fontFamily: 'var(--font-hero)' }}>
             Samien Shaheed
           </h1>
           <div className="mt-10 flex items-center justify-center gap-x-4 flex-wrap">
